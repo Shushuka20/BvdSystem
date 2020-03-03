@@ -1,11 +1,11 @@
-﻿module Domain.Sale
+﻿namespace Domain.Sale
 
 open Domain.Money
 open System
 
 type SaleProduct = {
     ProductId: int
-    SaleId: int
+    Amount: int
 }
 
 type Buyer =
@@ -18,8 +18,13 @@ type MoneyInformation = {
     Operations: seq<MoneyOperation>
 }
 
-type SaleFromStock = {
+type SaleFromShop = {
     DateTime: DateTime
-    Comment: string
     Products: seq<SaleProduct>    
 }
+
+module Sale =
+    
+    let createSaleFromShop (dateTime: DateTime, products: seq<SaleProduct>) =
+        let sale = {DateTime = dateTime; Products = products}
+        sale
