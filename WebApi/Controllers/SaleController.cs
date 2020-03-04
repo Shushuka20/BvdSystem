@@ -33,7 +33,7 @@ namespace WebApi.Controllers
 
             bool forRussia = false;
 
-            var sale = Sale.createSaleFromShop(DateTime.UtcNow, products);
+            var sale = SaleCommands.createSaleFromShop(DateTime.UtcNow, products);
             
             return Ok(sale);
         }

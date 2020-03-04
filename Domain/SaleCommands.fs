@@ -23,7 +23,7 @@ type SaleFromShop = {
     Products: seq<SaleProduct>    
 }
 
-module Sale =
+module SaleCommands =
     
     let createSaleFromShop (dateTime: DateTime, products: seq<SaleProduct>) =
         let sale = {DateTime = dateTime; Products = products}

@@ -15,8 +15,20 @@ type SupplyProduct = {
 }
 
 type Supply = {
+    Id: Guid
     SupplierId: Guid
     DateTime: DateTime
     Products: seq<SupplyProduct>
     ShopId: Guid
 }
+
+module SupplyCommands =
+    let createSupply id supplierId datetime shopId products =
+        let supply = {
+            Id = id
+            SupplierId = supplierId
+            DateTime = datetime
+            ShopId = shopId
+            Products = products
+        }
+        supply

@@ -9,7 +9,7 @@
         <Compile Include="Money.fs" />
         <Compile Include="Product.fs" />
         <Compile Include="Supply.fs" />
-        <Compile Include="Sale.fs" />
+        <Compile Include="SaleCommands.fs" />
     </ItemGroup>
 
 </Project>

@@ -1,26 +1,24 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Domain.Product;
+using Domain.Shop;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ProductsController : ControllerBase
+    public class ShopsController : ControllerBase
     {
-        [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok("products");
+            return Ok("shops");
         }
 
-        [HttpPost]
         public async Task<IActionResult> Post([FromBody] string title)
         {
-            var product = ProductCommands.createProduct(Guid.NewGuid(), title);
-            
-            return Ok(product);
+            var shop = ShopCommands.createShop(Guid.NewGuid(), title);
+
+            return Ok(shop);
         }
     }
 }
